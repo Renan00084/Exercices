@@ -1,3 +1,5 @@
+package org.example;
+
 public class Carro {
     private String marca, modelo;
     private int ano;
@@ -46,22 +48,34 @@ public class Carro {
     public void acelerar(double incremento){
         this.velocidadeAtual += incremento;
 
-    }
-
-    public void exibirVelocidade(){
-        System.out.println(getVelocidadeAtual() + " km");
-
-    }
-
-    public void frear(double decremento){
-        if(getVelocidadeAtual() < 0){
-            this.velocidadeAtual = 0;
-
-        }else{
-            this.velocidadeAtual -= decremento;
+        if(getVelocidadeAtual() > 100){
+            this.velocidadeAtual = 100;
 
         }
 
     }
+
+    public void exibirVelocidade(){
+        System.out.println("Velocidade Atual: " + getVelocidadeAtual() + " km");
+
+    }
+
+    public  void frear(double decremento){
+        this.velocidadeAtual -= decremento;
+
+        if(getVelocidadeAtual() < 0){
+            this.velocidadeAtual = 0;
+
+        }
+    }
+
+    public Carro(){
+        this.marca = null;
+        this.modelo = null;
+        this.velocidadeAtual = 0;
+        this.ano = 0;
+
+    }
+
 
 }
