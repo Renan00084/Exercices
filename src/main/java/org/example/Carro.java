@@ -60,7 +60,7 @@ public class Carro {
 
     }
 
-    public  void frear(double decremento){
+    public void frear(double decremento){
         this.velocidadeAtual -= decremento;
 
         if(getVelocidadeAtual() < 0){

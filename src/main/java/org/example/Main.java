@@ -18,32 +18,31 @@ public class Main {
 
             switch(opcao){
                 case 1:
+                    int velocidade, ano;
+                    double acelerar, frear;
+                    String marca, modelo;
+
+                    Carro carro = new Carro();
+
+                    System.out.println("Digite a marca do carro: ");
+                    marca = scanner.nextLine();
+                    carro.setMarca(marca);
+
+                    System.out.println("Digite o modelo do carro: ");
+                    modelo = scanner.nextLine();
+                    carro.setModelo(modelo);
+
+                    System.out.println("Digite o ano do carro: ");
+                    ano = scanner.nextInt();
+                    carro.setAno(ano);
+                    scanner.nextLine(); // limpa o buffer, ou seja, o enter que não é lido pelo nextInt
+
+                    System.out.println("Digite a velocidade atual do carro: ");
+                    velocidade = scanner.nextInt();
+                    carro.setVelocidadeAtual(velocidade);
+                    scanner.nextLine();
+
                     do{
-                        int velocidade, ano, acelerar, frear;
-                        String marca, modelo;
-
-                        Carro carro = new Carro();
-
-                        System.out.println("Digite a marca do carro: ");
-                        marca = scanner.nextLine();
-                        Carro.setMarca(String marca);
-                        scanner.nextLine();
-
-                        System.out.println("Digite o modelo do carro: ");
-                        modelo = scanner.nextLine();
-                        Carro.setModelo(String modelo);
-                        scanner.nextLine();
-
-                        System.out.println("Digite o ano do carro: ");
-                        ano = scanner.nextInt();
-                        Carro.setAno(int ano);
-                        scanner.nextLine();
-
-                        System.out.println("Digite a velocidade atual do carro: ");
-                        velocidade = scanner.nextInt();
-                        Carro.setVelocidadeAtual(int velocidade);
-                        scanner.nextLine();
-
                         System.out.println("--- CARRO ---");
                         System.out.println("1. Mostrar Velocidade Atual");
                         System.out.println("2. Acelerar");
@@ -55,19 +54,21 @@ public class Main {
 
                         switch(opcao2){
                             case 1:
-                                Carro.exibirVelocidade();
+                                carro.exibirVelocidade();
 
                             break;
                             case 2:
                                 System.out.println("Digite o quanto voce deseja acelerar");
                                 acelerar = scanner.nextInt();
-                                Carro.acelerar(double acelerar);
+                                scanner.nextLine();
+                                carro.acelerar(acelerar);
 
                             break;
                             case 3:
                                 System.out.println("Digite o quanto voce quer frear");
                                 frear = scanner.nextInt();
-                                Carro.frear(double frear);
+                                scanner.nextLine();
+                                carro.frear(frear);
 
                             break;
                         }
