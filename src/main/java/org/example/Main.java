@@ -10,9 +10,10 @@ public class Main {
 
         do{
             System.out.println("--- EXERCÍCIOS ---");
-            System.out.println("1. Carros");
-            System.out.println("2. Livros");
-            System.out.println("3. Sair");
+            System.out.println("1. Carro");
+            System.out.println("2. Livro");
+            System.out.println("3. Aluno");
+            System.out.println("4. Sair");
 
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -111,7 +112,7 @@ public class Main {
 
                     System.out.println("Digite a pagina atual: ");
                     pagAtual = scanner.nextInt();
-                    livro.setAtualPag(pagAtual);;
+                    livro.setAtualPag(pagAtual);
                     scanner.nextLine();
 
                     do{
@@ -155,9 +156,69 @@ public class Main {
 
                     }while(opcao2 != 4);
 
+                break;
+
+                case 3:
+                    String nome, matricula;
+                    double nota1, nota2;
+
+                    Aluno aluno = new Aluno();
+
+                    System.out.println("Digite o nome do aluno: ");
+                    nome = scanner.nextLine();
+                    aluno.setNome(nome);
+
+                    System.out.println("Digite a matriculo do aluno: ");
+                    matricula = scanner.nextLine();
+                    aluno.setMatricula(matricula);
+
+                    System.out.println("Digite a nota 1: ");
+                    nota1 = scanner.nextInt();
+                    aluno.setNota1(nota1);
+                    scanner.nextLine();
+
+                    System.out.println("Digite a nota 2: ");
+                    nota2 = scanner.nextInt();
+                    aluno.setNota2(nota2);
+                    scanner.nextLine();
+
+                    do{
+                        System.out.println("--- ALUNO ---");
+                        System.out.println("1. Calcular media");
+                        System.out.println("2. Verificar aprovacao");
+                        System.out.println("3. Sair");
+
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch(opcao2){
+                            case 1:
+                                aluno.calcularMedia();
+
+                            break;
+
+                            case 2:
+                                aluno.verificarAprovacao();
+
+                            break;
+
+                            case 3:
+                                System.out.println("Saindo...");
+
+                            break;
+
+                            default:
+                                System.out.println("Numero invalido. Tenta novamente");
+
+                            break;
+
+                        }
+
+                    }while (opcao2 != 3);
+
             }
 
-        }while(opcao != 3);
+        }while(opcao != 4);
 
     }
 }

@@ -69,13 +69,5 @@ public class Carro {
         }
     }
 
-    public Carro(){
-        this.marca = null;
-        this.modelo = null;
-        this.velocidadeAtual = 0;
-        this.ano = 0;
-
-    }
-
 
 }
