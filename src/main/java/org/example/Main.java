@@ -352,6 +352,53 @@ public class Main {
                     }while(opcao2 != 4);
                 break;
 
+                case 6:
+                    int idade;
+                    String nomePessoa;
+
+                    Pessoa pessoa = new Pessoa();
+
+                    System.out.println("Digite o nome da pessoa: ");
+                    nomePessoa = scanner.nextLine();
+                    pessoa.setNome(nomePessoa);
+
+                    System.out.println("Digite a idade da pessoa: ");
+                    idade = scanner.nextInt();
+                    pessoa.setIdade(idade);
+                    scanner.nextLine();
+
+                    do{
+                        System.out.println("--- PESSOA ---");
+                        System.out.println("1. Exibir informacoes");
+                        System.out.println("2. Sair");
+
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch(opcao2){
+                            case 1:
+                                pessoa.exibirInformacoes();
+
+                            break;
+
+                            case 2:
+                                System.out.println("Saindo...");
+
+                            break;
+
+                            default:
+                                System.out.println("Comando nao identificado");
+
+                            break;
+
+                        }
+
+                    }while (opcao2 != 2);
+                break;
+
+                case 7:
+
+
 
             }
 
