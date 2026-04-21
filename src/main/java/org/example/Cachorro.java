@@ -13,4 +13,16 @@ public class Cachorro extends Animal{
 
     }
 
+    @Override
+    public void exibirInformacoes(){
+        System.out.println("Nome: " + getNome() + "\nPeso: " + getPeso() + "\nRaca: " + getRaca());
+
+    }
+
+    @Override
+    public void emitirSom(){
+        System.out.println("Au au!");
+
+    }
+
 }

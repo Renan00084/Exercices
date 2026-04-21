@@ -13,4 +13,10 @@ public class Caminhao extends Veiculo{
 
     }
 
+    @Override
+    public void exibirInformacao(){
+        System.out.println("Marca: " + getMarca() + "\nModelo: " + getModelo() + "\nCapacidade de carga: " + getCapacidadeCarga());
+
+    }
+
 }

@@ -28,4 +28,16 @@ public class Moto extends Veiculo{
 
         } while (flag == false);
     }
+
+    @Override
+    public void exibirInformacao(){
+        System.out.println("Marca: " + getMarca() + "\nModelo: " + getModelo() + "\nTem carga? ");
+        if(temCarenagem){
+            System.out.println("Sim");
+
+        }else{
+            System.out.println("Nao");
+
+        }
+    }
 }

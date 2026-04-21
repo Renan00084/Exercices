@@ -19,7 +19,8 @@ public class Main {
             System.out.println("7. Animais");
             System.out.println("8. Veiculos");
             System.out.println("9. Colaboradores");
-            System.out.println("10. Sair");
+            System.out.println("10. Formas Geometricas");
+            System.out.println("11. Sair");
 
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -546,7 +547,7 @@ public class Main {
                                 modeloV = scanner.nextLine();
                                 moto.setModelo(modeloV);
 
-                                System.out.println("Tem carenagem(?)? (1 - Sim / 0 - Nao): ");
+                                System.out.println("Tem carga? (1 - Sim / 0 - Nao): ");
                                 temCarenagem = scanner.hasNext();
                                 moto.setTemCarenagem(temCarenagem);
                                 scanner.nextLine();
@@ -649,10 +650,148 @@ public class Main {
                 break;
 
                 case 9:
+                    do{
+                        double salarioBase, comissao;
+                        String nomeColaborador;
+
+                        System.out.println("--- COLABORADORES ---");
+                        System.out.println("1. Vendedor");
+                        System.out.println("2. Administrativo");
+                        System.out.println("3. Sair");
+
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch(opcao2){
+                            case 1:
+                                Vendedor vendedor = new Vendedor();
+
+                                System.out.println("Digite o nome: ");
+                                nomeColaborador = scanner.nextLine();
+                                vendedor.setNome(nomeColaborador);
+
+                                System.out.println("Digite o salario base: ");
+                                salarioBase = scanner.nextDouble();
+                                vendedor.setSalarioBase(salarioBase);
+                                scanner.nextLine();
+
+                                System.out.println("Digite a comissao: ");
+                                comissao = scanner.nextDouble();
+                                vendedor.setComissao(comissao);
+                                scanner.nextLine();
+
+                                do{
+                                    System.out.println("--- VENDEDOR ---");
+                                    System.out.println("1. Exibir informacoes");
+                                    System.out.println("2. Calcular salario");
+                                    System.out.println("3. Sair");
+
+                                    opcao3 = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    switch(opcao3){
+                                        case 1:
+                                            vendedor.exibirInformacao();
+
+                                            break;
+
+                                        case 2:
+                                            System.out.println("Seu salario atual e: " + vendedor.calcularSalario());
+
+                                            break;
+
+                                        case 3:
+                                            System.out.println("Saindo...");
+
+                                            break;
+
+                                        default:
+                                            System.out.println("Comando invalido, tente novamente");
+
+                                            break;
+                                    }
+
+                                }while (opcao3 != 3);
+
+                                break;
+
+                            case 2:
+                                Administrativo administrativo = new Administrativo();
+
+                                System.out.println("Digite o nome: ");
+                                nomeColaborador = scanner.nextLine();
+                                administrativo.setNome(nomeColaborador);
+
+                                System.out.println("Digite o salario base: ");
+                                salarioBase = scanner.nextDouble();
+                                administrativo.setSalarioBase(salarioBase);
+                                scanner.nextLine();
+
+                                do {
+                                    System.out.println("--- ADMINISTRATIVO ---");
+                                    System.out.println("1. Exibir informacoes");
+                                    System.out.println("2. Calcular salario");
+                                    System.out.println("3. Sair");
+
+                                    opcao3 = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    switch (opcao3) {
+                                        case 1:
+                                            administrativo.exibirInformacao();
+
+                                            break;
+
+                                        case 2:
+                                            System.out.println("Seu salario atual e: " + administrativo.calcularSalario());
+
+                                            break;
+
+                                        case 3:
+                                            System.out.println("Saindo...");
+
+                                            break;
+
+                                        default:
+                                            System.out.println("Comando invalido, tente novamente");
+
+                                            break;
+                                    }
+                                }while (opcao3 != 3);
+                                break;
+
+                            case 3:
+                                System.out.println("Saindo...");
+
+                                break;
+
+                            default:
+                                System.out.println("Valor invalido, tente novamente");
+
+                                break;
+                        }
+
+                    }while (opcao2 != 3);
+                break;
+
+                case 10:
+
+                break;
+
+                case 11:
+                    System.out.println("Saindo...");
+
+                break;
+
+                default:
+                    System.out.println("Comando invalido, tente novamente");
+
+                break;
+
 
             }
 
-        }while(opcao != 10);
+        }while(opcao != 11);
 
     }
 }
