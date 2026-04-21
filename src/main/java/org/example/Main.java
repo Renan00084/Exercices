@@ -775,6 +775,118 @@ public class Main {
                 break;
 
                 case 10:
+                    double a, b, raio;
+
+                    System.out.println("--- FORMAS GEOMETRICAS ---");
+                    System.out.println("1. Retangulo");
+                    System.out.println("2. Circulo");
+                    System.out.println("3. Sair");
+
+                    opcao2 = scanner.nextInt();
+                    scanner.nextLine();
+
+                    switch(opcao2){
+                        case 1:
+                            Retangulo retangulo = new Retangulo();
+
+                            System.out.println("Digite a base do retangulo: ");
+                            a = scanner.nextDouble();
+                            retangulo.setBase(a);
+                            scanner.nextLine();
+
+                            System.out.println("Digite a altura do retangulo: ");
+                            b = scanner.nextDouble();
+                            retangulo.setAltura(b);
+                            scanner.nextLine();
+
+                            do{
+                                System.out.println("--- RETANGULO ---");
+                                System.out.println("1. Exibir informacoes");
+                                System.out.println("2. Calcular area");
+                                System.out.println("3. Sair");
+
+                                opcao3 = scanner.nextInt();
+                                scanner.nextLine();
+
+                                switch(opcao3){
+                                    case 1:
+                                        retangulo.exibirInformacao();
+
+                                    break;
+
+                                    case 2:
+                                        System.out.println("Area: " + retangulo.calcularArea());
+
+                                    break;
+
+                                    case 3:
+                                        System.out.println("Saindo...");
+
+                                    break;
+
+                                    default:
+                                        System.out.println("Comando nao identificado, tente novamente");
+
+                                    break;
+                                }
+
+                            }while (opcao3 != 3);
+                        break;
+
+                        case 2:
+                            Circulo circulo = new Circulo();
+
+                            System.out.println("Digite o raio do circulo: ");
+                            raio = scanner.nextDouble();
+                            circulo.setRaio(raio);
+                            scanner.nextLine();
+
+                            do{
+                                System.out.println("--- CIRCULO ---");
+                                System.out.println("1. Exibir informacoes");
+                                System.out.println("2. Calcular area");
+                                System.out.println("3. Sair");
+
+                                opcao3 = scanner.nextInt();
+                                scanner.nextLine();
+
+                                switch(opcao3){
+                                    case 1:
+                                        circulo.exibirInformacao();
+
+                                    break;
+
+                                    case 2:
+                                        System.out.println("Area: " + circulo.calcularArea());
+
+                                    break;
+
+                                    case 3:
+                                        System.out.println("Saindo...");
+
+                                    break;
+
+                                    default:
+                                        System.out.println("Comando nao identificado, tente novamente");
+
+                                    break;
+
+                                }
+
+                            }while (opcao3 != 3);
+                        break;
+
+                        case 3:
+                            System.out.println("Saindo...");
+
+                        break;
+
+                        default:
+                            System.out.println("Comando nao identificado, tente novamente");
+
+                       break;
+
+                    }
 
                 break;
 
