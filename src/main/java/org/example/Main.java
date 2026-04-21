@@ -6,7 +6,7 @@ public class Main {
     static void main() {
         Scanner scanner = new Scanner(System.in);
 
-        int opcao = 0, opcao2 = 0;
+        int opcao = 0, opcao2 = 0, opcao3;
 
         do{
             System.out.println("--- EXERCÍCIOS ---");
@@ -397,9 +397,131 @@ public class Main {
                 break;
 
                 case 7:
+                    do{
+                        double peso;
+                        String nomeAnimal, raca;
 
+                        System.out.println("--- ANIMAIS ---");
+                        System.out.println("1. Cachorro");
+                        System.out.println("2. Gato");
+                        System.out.println("3. Sair");
 
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
 
+                        switch(opcao2){
+                            case 1:
+                                Cachorro cachorro = new Cachorro();
+
+                                System.out.println("Digite o nome do cachorro: ");
+                                nomeAnimal = scanner.nextLine();
+                                cachorro.setNome(nomeAnimal);
+
+                                System.out.println("Digite o nome da raca de " + cachorro.getNome() + ": ");
+                                raca = scanner.nextLine();
+                                cachorro.setNome(raca);
+
+                                System.out.println("Digite o peso do cachorro: ");
+                                peso = scanner.nextInt();
+                                cachorro.setPeso(peso);
+                                scanner.nextLine();
+
+                                do{
+                                    System.out.println("--- CACHORRO ---");
+                                    System.out.println("1. Exibir informacoes");
+                                    System.out.println("2. Som do animal");
+                                    System.out.println("3. Sair");
+
+                                    opcao3 = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    switch(opcao3){
+                                        case 1:
+                                            cachorro.exibirInformacoes();
+
+                                        break;
+
+                                        case 2:
+                                            cachorro.emitirSom();
+
+                                        break;
+
+                                        case 3:
+                                            System.out.println("Saindo...");
+
+                                        break;
+
+                                        default:
+                                            System.out.println("Comando invalido, tente novamente");
+
+                                        break;
+                                    }
+
+                                }while (opcao3 != 3);
+
+                            break;
+
+                            case 2:
+                                Gato gato = new Gato();
+
+                                System.out.println("Digite o nome do gato: ");
+                                nomeAnimal = scanner.nextLine();
+                                gato.setNome(nomeAnimal);
+
+                                System.out.println("Digite o peso do gato: ");
+                                peso = scanner.nextInt();
+                                gato.setPeso(peso);
+                                scanner.nextLine();
+
+                                do {
+                                    System.out.println("--- GATO ---");
+                                    System.out.println("1. Exibir informacoes");
+                                    System.out.println("2. Som do animal");
+                                    System.out.println("3. Sair");
+
+                                    opcao3 = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    switch (opcao3) {
+                                        case 1:
+                                            gato.exibirInformacoes();
+
+                                            break;
+
+                                        case 2:
+                                            gato.emitirSom();
+
+                                            break;
+
+                                        case 3:
+                                            System.out.println("Saindo...");
+
+                                            break;
+
+                                        default:
+                                            System.out.println("Comando invalido, tente novamente");
+
+                                            break;
+                                    }
+                                }while (opcao3 != 3);
+                            break;
+
+                            case 3:
+                                System.out.println("Saindo...");
+
+                            break;
+
+                            default:
+                                System.out.println("Valor invalido, tente novamente");
+
+                            break;
+                        }
+
+                    }while (opcao2 != 3);
+                break;
+
+                case 8:
+                    
             }
 
         }while(opcao != 10);
