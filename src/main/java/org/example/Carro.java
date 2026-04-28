@@ -32,6 +32,10 @@ public class Carro {
 
     public void setAno(int ano){
         this.ano = ano;
+        if(ano > 100){
+            this.ano = 100;
+
+        }
 
     }
 

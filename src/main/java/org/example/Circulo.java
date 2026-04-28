@@ -15,7 +15,7 @@ public class Circulo extends FormaGeometrica{
 
     @Override
     public double calcularArea(){
-        aux = 2 * 3.14 * raio;
+        aux = 2 * 3.14 * (raio * raio);
         return aux;
 
     }
